@@ -1,4 +1,563 @@
-<div class="content">
-  <h1>{{ message }}</h1>
-  <div>{{ message2 }}</div>
+<div class="container">
+  <aside class="sidebar">
+    <h1 class="name">Giacomo Rotondo</h1>
+    <h2 class="role">Back End Engineer</h2>
+    <h3 class="info">I engineer and develop robust back-end services.</h3>
+    <nav class="navigation">
+      <a (click)="scrollTo('about')" [class.active]="activeSection === 'about'"
+        >ABOUT ME</a
+      >
+      <a
+        (click)="scrollTo('experience')"
+        [class.active]="activeSection === 'experience'"
+        >EXPERIENCE</a
+      >
+      <a
+        (click)="scrollTo('certifications')"
+        [class.active]="activeSection === 'experience'"
+        >STUDIES AND CERTIFICATIONS</a
+      >
+      <a
+        (click)="scrollTo('projects')"
+        [class.active]="activeSection === 'projects'"
+        >PROJECTS</a
+      >
+    </nav>
+    <div class="link-container">
+      <div class="linkedin-icon">
+        <a
+          href="https://www.linkedin.com/in/grotondococco/"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="LinkedIn (opens in a new tab)"
+          title="LinkedIn (opens in a new tab)"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-6 w-6"
+            aria-hidden="true"
+          >
+            <path
+              d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+  <main class="content">
+    <section id="about" class="section" data-section="about">
+      <h4 class="section-title">ABOUT ME</h4>
+      <p>
+        I am a developer passionate about building robust, scalable, and
+        efficient architectures with a keen eye for code quality and good
+        software engineering practices. I love working where engineering and
+        design meet, creating solutions that not only work well, but are
+        designed to be robust, maintainable, and perform well.
+      </p>
+      <p>
+        I currently work as a Software Developer, specializing in microservices
+        development, cross-system integrations, and efficient API design using
+        <b>Java</b> and <b>Spring Boot</b>. I am responsible for building and
+        maintaining server-side applications that power modern web applications
+        and I mainly work on server-side software development having solid
+        experience with REST APIs across various architectures. Throughout my
+        career I have had the opportunity to develop software and provide
+        consulting in different contexts - I have taken part in projects for
+        <b>the public administration, Italian ministries, and banks</b> as part
+        of medium- and large-sized companies. This has allowed me to face
+        various technical challenges and increase my experience in integrating
+        complex systems and collaborating with distributed teams (I speak fluent
+        front-endish)
+      </p>
+      <p>
+        In my spare time I play guitar, relax by organizing barbecues with
+        friends and family, and always find time to cultivate new passions
+        related to the world of IT.
+      </p>
+    </section>
+
+    <section id="experience" class="section" data-section="experience">
+      <h4 class="section-title">EXPERIENCE</h4>
+      <a class="experience-entry">
+        <div class="experience-duration">2024 - PRESENT</div>
+        <div class="experience-content">
+          <div class="experience-role">
+            Software Engineer - Undisclosed Company
+          </div>
+          <div class="experience-details">
+            Currently working as a software engineer on innovative backend
+            systems for clients in the public administration sector and
+            ministries (ISS - Istituto Superiore di Sanità, ISPRA - Istituto
+            Superiore per la Protezione e la Ricerca Ambientale, MDS - Ministero
+            della Difesa). My role involves the design and implementation of
+            scalable services using Java and Spring Boot, implement
+            microservices architecture to innovate and refactorr legacy systems
+            from monolithic architectures, and developing new systems from
+            scratch. I actively collaborate with managers to align technical
+            solutions with business needs, and I also take active part in
+            mentoring junior developers, supporting their technical growth and
+            integration within the team with technical review and individual
+            tests.
+          </div>
+          <div class="experience-technologies">
+            <div class="tech">Java</div>
+            <div class="tech">Spring Boot</div>
+            <div class="tech">Hibernate ORM (JPA)</div>
+            <div class="tech">Junit</div>
+            <div class="tech">Angular</div>
+            <div class="tech">Git</div>
+            <div class="tech">RabbitMq</div>
+            <div class="tech">EDA (Event Driven Architecture)</div>
+            <div class="tech">SonarQube</div>
+            <div class="tech">REST APIs</div>
+            <div class="tech">Docker</div>
+            <div class="tech">Microservices</div>
+            <div class="tech">Kubernetes</div>
+            <div class="tech">Postgres</div>
+            <div class="tech">Swagger</div>
+            <div class="tech">Git</div>
+            <div class="tech">Postman</div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="experience-entry"
+        href="https://www.gruppodigitouch.it/"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Digitouch Technologies (opens in a new tab)"
+        title="Digitouch Technologies (opens in a new tab)"
+      >
+        <div class="experience-duration">2022 - 2024</div>
+        <div class="experience-content">
+          <div class="experience-role">
+            Software Engineer - Digitouch Technologies
+          </div>
+          <div class="experience-details">
+            Within the consulting sector, i worked on a wide range of projects
+            for major clients including banks (Poste Italiane, Unipol), and
+            public administrations and ministries (MIT - Ministero delle
+            infrastrutture e dei trasporti, Sport e Salute). Between building
+            new solutions and manteining enterprise software i collaborated with
+            large-sized consulting companies such as DXC Technology and Deloitte
+            in distributed teams.
+          </div>
+          <div class="experience-technologies">
+            <div class="tech">Java</div>
+            <div class="tech">Spring Boot</div>
+            <div class="tech">Hibernate ORM (JPA)</div>
+            <div class="tech">Junit</div>
+            <div class="tech">SonarQube</div>
+            <div class="tech">REST APIs</div>
+            <div class="tech">Docker</div>
+            <div class="tech">Microservices</div>
+            <div class="tech">Kubernetes</div>
+            <div class="tech">Oracle</div>
+            <div class="tech">MySql</div>
+            <div class="tech">Postgres</div>
+            <div class="tech">Liquibase</div>
+            <div class="tech">Swagger</div>
+            <div class="tech">Git</div>
+            <div class="tech">Postman</div>
+            <div class="tech">Jboss</div>
+            <div class="tech">React</div>
+          </div>
+        </div>
+      </a>
+      <div class="resume-link-container">
+        <a href="path/to/cv.pdf" download class="resume-link">
+          View full Resume <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="certifications" class="section" data-section="certifications">
+      <h4>STUDIES AND CERTIFICATIONS</h4>
+      <p>
+        Bachelor's degree in computer science with a grade of 110 / 110 & laude
+        |
+        <a
+          class="source-link"
+          href="https://www.unict.it/"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Università di Catania (opens in a new tab)"
+          title="Università di Catania (opens in a new tab)"
+          >Università di Catania<span class="arrow">→</span></a
+        >
+      </p>
+      <p>
+        Masterclass - Code To Work (Java) |
+        <a
+          class="source-link"
+          href="https://opinno.com/it/"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="Opinno (opens in a new tab)"
+          title="Opinno (opens in a new tab)"
+          >Opinno<span class="arrow">→</span></a
+        >
+      </p>
+      <p>
+        Business English |
+        <a
+          class="source-link"
+          href="https://www.soluzionidimpresa.it/"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="SDI - Soluzioni d'impresa (opens in a new tab)"
+          title="SDI - Soluzioni d'impresa  (opens in a new tab)"
+          >SDI - Soluzioni d'impresa<span class="arrow">→</span>
+        </a>
+      </p>
+      <p>
+        Code of Conduct Training e Security Awareness |
+        <a
+          class="source-link"
+          href="https://dxc.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="DXC Technology (opens in a new tab)"
+          title="DXC Technology (opens in a new tab)"
+          >DXC Technology<span class="arrow">→</span></a
+        >
+      </p>
+
+      <p>
+        Problem Solving, Python Programming, and Video Games |
+        <a
+          class="source-link"
+          href="https://www.ualberta.ca/"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="University of Alberta (opens in a new tab)"
+          title="University of Alberta (opens in a new tab)"
+          >University of Alberta<span class="arrow">→</span></a
+        >
+      </p>
+    </section>
+
+    <section id="projects" class="section" data-section="projects">
+      <h4>PROJECTS</h4>
+      <h5>Company Projects: where I learned to be a team player</h5>
+      <a
+        class="project-entry"
+        href="https://www.iss.it/antea-il-progetto"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Progetto AnTeA (opens in a new tab)"
+        title="Progetto AnTeA (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">Progetto AnTeA - ISS</div>
+          <div class="project-details">
+            Service for the National Institute of Health that is responsible for
+            collecting and cataloging water quality data. I actively contributed
+            to the design and development of an event-driven back-end
+            architecture using RabbitMq.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">Java</div>
+            <div class="tech">Spring Boot</div>
+            <div class="tech">Hibernate ORM (JPA)</div>
+            <div class="tech">RabbitMq</div>
+            <div class="tech">REST APIs</div>
+            <div class="tech">Docker</div>
+            <div class="tech">WebFlux</div>
+            <div class="tech">Angular</div>
+            <div class="tech">Microservices</div>
+            <div class="tech">Kubernetes</div>
+            <div class="tech">Postgres</div>
+            <div class="tech">Swagger</div>
+            <div class="tech">Git</div>
+            <div class="tech">Postman</div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project-entry"
+        href="https://csem.difesa.it/"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Cartella Sanitaria Elettronica (opens in a new tab)"
+        title="Cartella Sanitaria Elettronica (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">Cartella Sanitaria Elettronica - MDD</div>
+          <div class="project-details">
+            Service for the Ministry of Defense that processes genomic data of
+            patients. I played a pivotal role by developing a security feature
+            using Keycloak and a rest api from scratch for back-end use via
+            military equipment.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">Java</div>
+            <div class="tech">Spring Boot</div>
+            <div class="tech">Hibernate ORM (JPA)</div>
+            <div class="tech">Keycloak</div>
+            <div class="tech">REST APIs</div>
+            <div class="tech">Docker</div>
+            <div class="tech">Microservices</div>
+            <div class="tech">Kubernetes</div>
+            <div class="tech">Postgres</div>
+            <div class="tech">Swagger</div>
+            <div class="tech">Git</div>
+            <div class="tech">Postman</div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project-entry"
+        href="https://www.ilportaledellautomobilista.it/"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Il portale dell'automobilista (opens in a new tab)"
+        title="Il portale dell'automobilista (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">NSMA & PRMP - MIT</div>
+          <div class="project-details">
+            Services for the Ministry of Infrastructure and Transport for
+            consultation and filing of files regarding agricultural machinery
+            and for managing heavy vehicle audits. The two services are used as
+            sections of the motorist portal, a web service open to the public,
+            and have technologies in common. I worked with a multinational team
+            using mixed technologies with Agile methodology developing new
+            features and maintaining code in collaboration with a cross-company
+            front-end team.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">Java</div>
+            <div class="tech">Spring Boot</div>
+            <div class="tech">Hibernate ORM (JPA)</div>
+            <div class="tech">RabbitMq</div>
+            <div class="tech">Junit</div>
+            <div class="tech">REST APIs</div>
+            <div class="tech">Docker</div>
+            <div class="tech">Microservices</div>
+            <div class="tech">Kubernetes</div>
+            <div class="tech">Oracle</div>
+            <div class="tech">Swagger</div>
+            <div class="tech">Git</div>
+            <div class="tech">Postman</div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project-entry"
+        href="https://www.tim.it/"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="TIM (opens in a new tab)"
+        title="TIM (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">Campaign Data Warehouse - TIM</div>
+          <div class="project-details">
+            TIM is an Italian telecommunications company, offering fixed-line,
+            public, mobile, VoIP and Internet services. I was responsible for
+            developing and maintaining services related to marketing campaigns
+            on enterprise applications on WebLogic servers interconnected with
+            Oracle Golden Gate.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">Java</div>
+            <div class="tech">Hibernate ORM (JPA)</div>
+            <div class="tech">Oracle</div>
+            <div class="tech">PSQL</div>
+            <div class="tech">Serena PVCS</div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project-entry"
+        href="https://www.poste.it/"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Poste Italiane (opens in a new tab)"
+        title="Poste Italiane (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">EDVR / GFIP - Poste Italiane</div>
+          <div class="project-details">
+            I analyzed and performed security fixes on Java Enterprise
+            applications hosted on JBoss web server. I performed the fixes using
+            both dynamics analysis and static analysis.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">Java</div>
+            <div class="tech">Hibernate ORM (JPA)</div>
+            <div class="tech">Oracle</div>
+            <div class="tech">JBoss</div>
+            <div class="tech">SVN</div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project-entry"
+        href="https://monitoraggioprogetti.sportesalute.eu/"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Monitoraggio Progetti (opens in a new tab)"
+        title="Monitoraggio Progetti (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">Monitoraggio Progetti - Sport e Salute</div>
+          <div class="project-details">
+            The application is open to the public and is responsible for
+            registering participation in sporting events. I have performed
+            evolutions on front-end code in collaboration with my team.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">React</div>
+            <div class="tech">Microservices</div>
+            <div class="tech">Kubernetes</div>
+            <div><div class="tech">Git</div></div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project-entry"
+        href="https://www.unipol.it/"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Unipol (opens in a new tab)"
+        title="Unipol (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">App monitoring - Unipol</div>
+          <div class="project-details">
+            Insurance practice tracking web application. I was in charge of a
+            delicate porting from Spring Boot to Spring Batch for timely
+            execution of back-end queries that went to modify live parameters of
+            a front-end in Power Bi.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">Java</div>
+            <div class="tech">Spring Boot</div>
+            <div class="tech">Spring Batch</div>
+            <div><div class="tech">Git</div></div>
+          </div>
+        </div>
+      </a>
+      <h5>Personal Projects: where I repeatedly lost my sense of time</h5>
+      <a
+        class="project-entry"
+        href="https://github.com/grotondococco/egames"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Egames (opens in a new tab)"
+        title="Egames (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">Egames</div>
+          <div class="project-details">
+            Project for the course of study Database: consists of a full stack
+            application (React front-end, Spring Boot back-end) where the main
+            focus is the database design starting from a careful analysis by
+            dissecting and analyzing each requirement.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">Java</div>
+            <div class="tech">Spring Boot</div>
+            <div class="tech">React</div>
+            <div class="tech">MySql</div>
+            <div><div class="tech">E-R diagram</div></div>
+            <div><div class="tech">Git</div></div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project-entry"
+        href="https://github.com/grotondococco/AstroJellyAttack"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Astro Jelly Attack (opens in a new tab)"
+        title="Astro Jelly Attack (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">Astro Jelly Attack</div>
+          <div class="project-details">
+            Project for the course of study Digital Game Development: Astro
+            Jelly Attack is proposed as an action-adventure game in which the
+            protagonist (Astro) is on a mission to rescue gelatinous beings
+            (Jelly) lost on planets inhabited by monsters. The game is entirely
+            developed in Unity and I followed the entire development myself from
+            design to bug fixing.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">C#</div>
+            <div class="tech">Unity</div>
+            <div class="tech">Game Design</div>
+            <div class="tech">Game Programming</div>
+            <div class="tech">Git</div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project-entry"
+        href="https://github.com/grotondococco/stroopcolorgame"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Stroop Color Game (opens in a new tab)"
+        title="Stroop Color Game (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">Stroop Color Game</div>
+          <div class="project-details">
+            Project for the course of study Web Programming: Application that is
+            composed in a Node.js back-end with Express, which through the use
+            of Telegram api allows the fruition of an HTML5 game via PixiJS
+            framework.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">JavaScript</div>
+            <div class="tech">PixieJs</div>
+            <div class="tech">WebGL</div>
+            <div class="tech">Telegram Api</div>
+            <div class="tech">Node.js</div>
+            <div class="tech">Express</div>
+            <div class="tech">Git</div>
+          </div>
+        </div>
+      </a>
+      <a
+        class="project-entry"
+        href="https://github.com/grotondococco/VisualBooth"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Visual Booth (opens in a new tab)"
+        title="Visual Booth (opens in a new tab)"
+      >
+        <div class="project-content">
+          <div class="project-name">Visual Booth</div>
+          <div class="project-details">
+            Project for the course of study Computer Architecture: Standalone
+            application written in Processing, a Java-derived language for the
+            creation of visual arts.
+          </div>
+          <div class="project-technologies">
+            <div class="tech">Java</div>
+            <div class="tech">Processing</div>
+            <div class="tech">Git</div>
+          </div>
+        </div>
+      </a>
+    </section>
+    <div class="page-end">
+      Coded in Visual Studio Code by yours truly. Built with Angular and
+      deployed with Vercel. The Font used is Inter by Google Fonts. Inspired by
+      <a
+        href="https://brittanychiang.com"
+        target="_blank"
+        rel="noreferrer noopener"
+        aria-label="Brittany Chiang (opens in a new tab)"
+        title="Brittany Chiang (opens in a new tab)"
+        >Brittany Chiang</a
+      >.
+      <div class="copyright">© {{ currentYear }} Giacomo Rotondo Cocco</div>
+    </div>
+  </main>
 </div>

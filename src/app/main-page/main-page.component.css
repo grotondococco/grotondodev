@@ -1,3 +1,364 @@
-.content {
+:root {
+  --dark-green: #353535;
+  --green: #3c6e71;
+  --white: #ffffff;
+  --soft-grey: #d9d9d9;
+  --blue-navy: #284b63;
+}
+
+/* Base layout (mobile-first) */
+.container {
+  width: 100%;
+  display: block;
+  background-color: var(--dark-green);
+  padding: 2rem;
+  font-size: 1rem;
+}
+
+.navigation a {
+  color: var(--soft-grey);
+  transition: color 0.3s ease;
+  display: block;
+  margin: 1rem 0;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+}
+
+.navigation a:hover {
   color: var(--white);
+}
+
+.navigation a.active {
+  color: var(--white);
+}
+
+.sidebar {
+  background-color: var(--dark-green);
+  color: var(--white);
+  text-align: left;
+  padding: 2rem;
+  width: 100%;
+}
+
+.name {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.role {
+  font-size: 1rem;
+}
+
+.info {
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+  font-weight: lighter;
+}
+
+.link-container {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.linkedin-icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+.content {
+  padding: 1rem;
+  background-color: var(--blue-navy);
+}
+
+.section {
+  background-color: var(--blue-navy);
+  color: var(--soft-grey);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  display: none;
+}
+
+.experience-entry,
+.project-entry {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--green);
+  padding-left: 1rem;
+  text-decoration: none;
+}
+
+.experience-entry:focus,
+visited {
+  text-decoration: none;
+}
+
+.project-entry:focus,
+visited {
+  text-decoration: none;
+}
+
+.experience-duration {
+  color: var(--soft-grey);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.experience-role,
+.project-name {
+  color: var(--white);
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.experience-details,
+.project-details {
+  color: var(--soft-grey);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.experience-technologies,
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech {
+  background-color: var(--green);
+  color: var(--white);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.resume-link,
+.source-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--soft-grey);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.resume-link .arrow,
+.source-link .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  margin-left: 0.3rem;
+}
+
+.resume-link:hover,
+.source-link:hover {
+  color: var(--white);
+}
+
+.resume-link:hover .arrow,
+.source-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+#certifications p {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.project-entry:hover {
+  border-left: 4px solid var(--white);
+}
+
+#projects h5 {
+  margin-top: 4rem;
+}
+
+.page-end {
+  font-size: small;
+  width: 60%;
+  margin: 2rem auto;
+  text-align: left;
+  color: var(--soft-grey);
+}
+
+.page-end a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.page-end a:visited {
+  text-decoration: none;
+  color: var(--soft-grey);
+}
+
+@media (max-width: 1024px) {
+  .navigation {
+    display: none;
+  }
+  .section-title {
+    display: block;
+  }
+  .experience-entry:hover {
+    border-left: 4px solid var(--white);
+  }
+}
+
+/* ≥ 480px (es. telefoni in landscape) */
+@media (min-width: 480px) {
+  .container {
+    max-width: 100vw; /* impedisce di superare la larghezza della viewport */
+    overflow-x: hidden;
+    padding: 3rem;
+    font-size: 1.05rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .role {
+    font-size: 1.05rem;
+  }
+
+  .info {
+    font-size: 0.9rem;
+  }
+}
+
+/* ≥ 768px (es. tablet) */
+@media (min-width: 768px) {
+  .container {
+    padding: 3rem;
+    font-size: 1.1rem;
+  }
+
+  .name {
+    font-size: 2.2rem;
+  }
+
+  .role {
+    font-size: 1.1rem;
+  }
+
+  .info {
+    font-size: 1rem;
+  }
+
+  .linkedin-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .section {
+    padding: 2rem;
+  }
+}
+
+/* ≥ 1024px (desktop layout con sidebar a sinistra) */
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .sidebar {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 3rem 2rem;
+  }
+
+  .content {
+    margin-left: 250px;
+    width: calc(100% - 300px);
+    padding: 2rem;
+  }
+
+  .section {
+    padding: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .linkedin-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .experience-entry {
+    flex-direction: row;
+    align-items: flex-start;
+    padding-left: 0;
+    border-left: none;
+    border-top: 2px solid var(--green);
+    padding-top: 1.5rem;
+    gap: 2rem;
+  }
+
+  .experience-entry:hover {
+    background-color: var(--blue-navy);
+    opacity: 0.9;
+  }
+
+  .experience-duration {
+    width: 150px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+  }
+
+  .experience-role,
+  .experience-details,
+  .experience-technologies {
+    margin-left: 0;
+  }
+
+  .experience-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .experience-technologies {
+    margin-top: 1rem;
+  }
+}
+
+/* ≥ 1280px (large desktop) */
+@media (min-width: 1280px) {
+  .name {
+    font-size: 2.4rem;
+  }
+
+  .role {
+    font-size: 1.2rem;
+  }
+
+  .info {
+    font-size: 1.1rem;
+  }
+
+  .linkedin-icon {
+    width: 36px;
+    height: 36px;
+  }
+  .content {
+    margin-left: 300px;
+    width: calc(100% - 400px);
+  }
 }
