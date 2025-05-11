@@ -23,7 +23,7 @@ export class MainPageComponent implements AfterViewInit {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.5, // almeno il 50% visibile
+      threshold: 0.4, // almeno il 50% visibile
     };
 
     const observer = new IntersectionObserver((entries) => {

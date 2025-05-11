@@ -226,11 +226,11 @@ visited {
   }
 
   .name {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .role {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
   }
 
   .info {
@@ -246,11 +246,11 @@ visited {
   }
 
   .name {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .role {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 
   .info {
@@ -342,11 +342,11 @@ visited {
 /* ≥ 1280px (large desktop) */
 @media (min-width: 1280px) {
   .name {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 
   .role {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
   }
 
   .info {
