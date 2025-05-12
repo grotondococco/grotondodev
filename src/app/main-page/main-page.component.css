@@ -15,7 +15,8 @@
   font-size: 1rem;
 }
 
-.navigation a {
+.navigation a,
+.language-selector .language-selection {
   color: var(--soft-grey);
   transition: color 0.3s ease;
   display: block;
@@ -27,7 +28,8 @@
   letter-spacing: 1.2px;
 }
 
-.navigation a:hover {
+.navigation a:hover,
+.language-selector .language-selection:hover {
   color: var(--white);
 }
 
@@ -68,6 +70,28 @@
   width: 28px;
   height: 28px;
   filter: brightness(0) invert(1);
+}
+
+.language-label{
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+
+}
+.language-selector {
+  margin-top: 2rem;
+}
+
+.language-list {
+  display: flex;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.language-selection {
+  cursor: pointer;
+  width: 30px;
+  height: 18px;
 }
 
 .content {

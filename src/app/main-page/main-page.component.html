@@ -2,28 +2,41 @@
   <aside class="sidebar">
     <h1 class="name">Giacomo Rotondo</h1>
     <h2 class="role">Back End Engineer</h2>
-    <h3 class="info">I engineer and develop robust back-end services.</h3>
+    <h3 class="info">
+      {{
+        language === "it"
+          ? "Ingegneria e sviluppo di servizi back end robusti."
+          : "I engineer and develop robust back end services."
+      }}
+    </h3>
     <nav class="navigation">
-      <a (click)="scrollTo('about')" [class.active]="activeSection === 'about'"
-        >ABOUT ME</a
+      <a
+        (click)="scrollTo('about')"
+        [class.active]="activeSection === 'about'"
+        >{{ language === "it" ? "CHI SONO" : "ABOUT ME" }}</a
       >
       <a
         (click)="scrollTo('experience')"
         [class.active]="activeSection === 'experience'"
-        >EXPERIENCE</a
+        >{{ language === "it" ? "ESPERIENZA" : "EXPERIENCE" }}</a
       >
       <a
         (click)="scrollTo('certifications')"
         [class.active]="activeSection === 'certifications'"
-        >STUDIES AND CERTIFICATIONS</a
+        >{{
+          language === "it"
+            ? "STUDI E CERTIFICAZIONI"
+            : "STUDIES AND CERTIFICATIONS"
+        }}</a
       >
       <a
         (click)="scrollTo('projects')"
         [class.active]="activeSection === 'projects'"
-        >PROJECTS</a
+        >{{ language === "it" ? "PROGETTI" : "PROJECTS" }}</a
       >
     </nav>
     <div class="link-container">
+      @if(language == 'it'){
       <div class="linkedin-icon">
         <a
           href="https://www.linkedin.com/in/grotondococco/"
@@ -44,11 +57,174 @@
           </svg>
         </a>
       </div>
+      } @else {
+      <div class="linkedin-icon">
+        <a
+          href="https://www.linkedin.com/in/grotondococco/?locale=en_US"
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label="LinkedIn (opens in a new tab)"
+          title="LinkedIn (opens in a new tab)"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            class="h-6 w-6"
+            aria-hidden="true"
+          >
+            <path
+              d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+      }
+    </div>
+    <div class="language-selector">
+      <div class="language-label">
+        {{ language === "it" ? "LINGUA" : "LANGUAGE" }}
+      </div>
+
+      <div class="language-list">
+        <div (click)="changeLanguage('it')" class="language-selection">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            shape-rendering="geometricPrecision"
+            text-rendering="geometricPrecision"
+            image-rendering="optimizeQuality"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            viewBox="0 0 90.77 63.15"
+          >
+            <g fill-rule="nonzero">
+              <path
+                fill="#009246"
+                d="M29.47 0v63.15H4.99C2.24 63.15 0 60.9 0 58.16V4.99C0 2.24 2.24 0 4.99 0h24.48z"
+              />
+              <path fill="#fff" d="M61.31 0v63.15H29.47V0z" />
+              <path
+                fill="#CE2B37"
+                d="M61.31 63.15V0h24.48c2.74 0 4.98 2.24 4.98 4.99v53.17c0 2.74-2.24 4.99-4.98 4.99H61.31z"
+              />
+            </g>
+          </svg>
+        </div>
+        <div (click)="changeLanguage('en')" class="language-selection">
+          <svg
+            version="1.1"
+            id="Layer_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px"
+            y="0px"
+            viewBox="0 0 55.2 38.4"
+            style="enable-background: new 0 0 55.2 38.4"
+            xml:space="preserve"
+          >
+            <style type="text/css">
+              .st0 {
+                fill: #fefefe;
+              }
+              .st1 {
+                fill: #c8102e;
+              }
+              .st2 {
+                fill: #012169;
+              }
+            </style>
+            <g>
+              <path
+                class="st0"
+                d="M2.87,38.4h49.46c1.59-0.09,2.87-1.42,2.87-3.03V3.03c0-1.66-1.35-3.02-3.01-3.03H3.01 C1.35,0.01,0,1.37,0,3.03v32.33C0,36.98,1.28,38.31,2.87,38.4L2.87,38.4z"
+              />
+              <polygon
+                class="st1"
+                points="23.74,23.03 23.74,38.4 31.42,38.4 31.42,23.03 55.2,23.03 55.2,15.35 31.42,15.35 31.42,0 23.74,0 23.74,15.35 0,15.35 0,23.03 23.74,23.03"
+              />
+              <path
+                class="st2"
+                d="M33.98,12.43V0h18.23c1.26,0.02,2.34,0.81,2.78,1.92L33.98,12.43L33.98,12.43z"
+              />
+              <path
+                class="st2"
+                d="M33.98,25.97V38.4h18.35c1.21-0.07,2.23-0.85,2.66-1.92L33.98,25.97L33.98,25.97z"
+              />
+              <path
+                class="st2"
+                d="M21.18,25.97V38.4H2.87c-1.21-0.07-2.24-0.85-2.66-1.94L21.18,25.97L21.18,25.97z"
+              />
+              <path
+                class="st2"
+                d="M21.18,12.43V0H2.99C1.73,0.02,0.64,0.82,0.21,1.94L21.18,12.43L21.18,12.43z"
+              />
+              <polygon class="st2" points="0,12.8 7.65,12.8 0,8.97 0,12.8" />
+              <polygon
+                class="st2"
+                points="55.2,12.8 47.51,12.8 55.2,8.95 55.2,12.8"
+              />
+              <polygon
+                class="st2"
+                points="55.2,25.6 47.51,25.6 55.2,29.45 55.2,25.6"
+              />
+              <polygon class="st2" points="0,25.6 7.65,25.6 0,29.43 0,25.6" />
+              <polygon
+                class="st1"
+                points="55.2,3.25 36.15,12.8 40.41,12.8 55.2,5.4 55.2,3.25"
+              />
+              <polygon
+                class="st1"
+                points="19.01,25.6 14.75,25.6 0,32.98 0,35.13 19.05,25.6 19.01,25.6"
+              />
+              <polygon
+                class="st1"
+                points="10.52,12.81 14.78,12.81 0,5.41 0,7.55 10.52,12.81"
+              />
+              <polygon
+                class="st1"
+                points="44.63,25.59 40.37,25.59 55.2,33.02 55.2,30.88 44.63,25.59"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
   </aside>
   <main class="content">
     <section id="about" class="section" data-section="about">
-      <h4 class="section-title">ABOUT ME</h4>
+      <h4 class="section-title">
+        {{ language === "it" ? "CHI SONO" : "ABOUT ME" }}
+      </h4>
+      @if(language == 'it'){
+      <p>
+        Sono uno sviluppatore appassionato nella creazione di architetture
+        robuste, scalabili ed efficienti, con una particolare attenzione alla
+        qualità del codice e alle buone pratiche di ingegneria del software. Amo
+        lavorare nel punto d'incontro tra ingegneria e design, creando soluzioni
+        che non solo funzionano bene, ma sono progettate per essere robuste,
+        manutenibili e performanti.
+      </p>
+      <p>
+        Attualmente lavoro come Sviluppatore Software, specializzato nello
+        sviluppo di microservizi, integrazioni tra sistemi e progettazione
+        efficiente di API utilizzando <b>Java</b> e <b>Spring Boot</b>. Mi
+        occupo della realizzazione e manutenzione di applicazioni lato server
+        che alimentano applicazioni web moderne, lavorando principalmente sullo
+        sviluppo software back-end e avendo una solida esperienza con API REST
+        in diverse architetture. Nel corso della mia carriera ho avuto
+        l'opportunità di sviluppare software e fornire consulenza in contesti
+        differenti: ho partecipato a progetti per
+        <b>la pubblica amministrazione, i ministeri italiani e le banche</b>
+        all'interno di aziende di medie e grandi dimensioni. Questo mi ha
+        permesso di affrontare varie sfide tecniche e accrescere la mia
+        esperienza nell'integrazione di sistemi complessi e nella collaborazione
+        con team distribuiti (parlo fluentemente il "front-endese").
+      </p>
+      <p>
+        Nel tempo libero suono la chitarra, mi rilasso organizzando grigliate
+        con amici e familiari, e trovo sempre il tempo per coltivare nuove
+        passioni legate al mondo dell’informatica.
+      </p>
+      } @else {
       <p>
         I am a developer passionate about building robust, scalable, and
         efficient architectures with a keen eye for code quality and good
@@ -76,30 +252,49 @@
         friends and family, and always find time to cultivate new passions
         related to the world of IT.
       </p>
+      }
     </section>
 
     <section id="experience" class="section" data-section="experience">
-      <h4 class="section-title">EXPERIENCE</h4>
+      <h4 class="section-title">
+        {{ language === "it" ? "ESPERIENZA" : "EXPERIENCE" }}
+      </h4>
       <a class="experience-entry">
-        <div class="experience-duration">2024 - PRESENT</div>
+        <div class="experience-duration">
+          2024 - @if(language == 'it'){ OGGI } @else { PRESENT}
+        </div>
         <div class="experience-content">
           <div class="experience-role">
-            Software Engineer - Undisclosed Company
+            Software Engineer - @if(language == 'it') {Nome dell'azienda non
+            divulgabile} @else {Undisclosed company name}
           </div>
           <div class="experience-details">
-            Currently working as a software engineer on innovative backend
-            systems for clients in the public administration sector and
-            ministries (ISS - Istituto Superiore di Sanità, ISPRA - Istituto
-            Superiore per la Protezione e la Ricerca Ambientale, MDS - Ministero
-            della Difesa). My role involves the design and implementation of
-            scalable services using Java and Spring Boot, implement
-            microservices architecture to innovate and refactorr legacy systems
-            from monolithic architectures, and developing new systems from
-            scratch. I actively collaborate with managers to align technical
-            solutions with business needs, and I also take active part in
-            mentoring junior developers, supporting their technical growth and
-            integration within the team with technical review and individual
-            tests.
+            @if(language == 'it') { Attualmente lavoro come software engineer su
+            sistemi backend innovativi per clienti del settore della pubblica
+            amministrazione e dei ministeri (ISS - Istituto Superiore di Sanità,
+            ISPRA - Istituto Superiore per la Protezione e la Ricerca
+            Ambientale, MDS - Ministero della Difesa). Il mio ruolo prevede la
+            progettazione e l’implementazione di servizi scalabili utilizzando
+            Java e Spring Boot, l’adozione di architetture a microservizi per
+            innovare e rifattorizzare sistemi legacy basati su architetture
+            monolitiche, nonché lo sviluppo di nuovi sistemi da zero. Collaboro
+            attivamente con i responsabili per allineare le soluzioni tecniche
+            alle esigenze di business e partecipo attivamente al mentoring di
+            sviluppatori junior, supportando la loro crescita tecnica e
+            l’integrazione nel team attraverso revisioni tecniche e test
+            individuali. } @else { Currently working as a software engineer on
+            innovative backend systems for clients in the public administration
+            sector and ministries (ISS - Istituto Superiore di Sanità, ISPRA -
+            Istituto Superiore per la Protezione e la Ricerca Ambientale, MDS -
+            Ministero della Difesa). My role involves the design and
+            implementation of scalable services using Java and Spring Boot,
+            implement microservices architecture to innovate and refactorr
+            legacy systems from monolithic architectures, and developing new
+            systems from scratch. I actively collaborate with managers to align
+            technical solutions with business needs, and I also take active part
+            in mentoring junior developers, supporting their technical growth
+            and integration within the team with technical review and individual
+            tests.}
           </div>
           <div class="experience-technologies">
             <div class="tech">Java</div>
@@ -136,13 +331,20 @@
             Software Engineer - Digitouch Technologies
           </div>
           <div class="experience-details">
-            Within the consulting sector, i worked on a wide range of projects
-            for major clients including banks (Poste Italiane, Unipol), and
-            public administrations and ministries (MIT - Ministero delle
-            infrastrutture e dei trasporti, Sport e Salute). Between building
-            new solutions and manteining enterprise software i collaborated with
-            large-sized consulting companies such as DXC Technology and Deloitte
-            in distributed teams.
+            @if(language == 'it') { Nel settore della consulenza, ho lavorato su
+            una vasta gamma di progetti per clienti di rilievo, tra cui banche
+            (Poste Italiane, Unipol) e pubbliche amministrazioni e ministeri
+            (MIT - Ministero delle Infrastrutture e dei Trasporti, Sport e
+            Salute). Tra la realizzazione di nuove soluzioni e la manutenzione
+            di software enterprise, ho collaborato con grandi società di
+            consulenza come DXC Technology e Deloitte all'interno di team
+            distribuiti. } @else { Within the consulting sector, i worked on a
+            wide range of projects for major clients including banks (Poste
+            Italiane, Unipol), and public administrations and ministries (MIT -
+            Ministero delle infrastrutture e dei trasporti, Sport e Salute).
+            Between building new solutions and manteining enterprise software i
+            collaborated with large-sized consulting companies such as DXC
+            Technology and Deloitte in distributed teams.}
           </div>
           <div class="experience-technologies">
             <div class="tech">Java</div>
@@ -167,17 +369,34 @@
         </div>
       </a>
       <div class="resume-link-container">
-        <a href="path/to/cv.pdf" download class="resume-link">
-          View full Resume <span class="arrow">→</span>
+        @if(language == 'it') {
+        <a href="path/to/CV_Giacomo_Rotondo.pdf" download class="resume-link">
+          Visualizza il curriculum completo <span class="arrow">→</span>
         </a>
+        } @else {
+        <a
+          href="path/to/CV_Giacomo_Rotondo_EN.pdf"
+          download
+          class="resume-link"
+        >
+          View full resume <span class="arrow">→</span>
+        </a>
+        }
       </div>
     </section>
 
     <section id="certifications" class="section" data-section="certifications">
-      <h4>STUDIES AND CERTIFICATIONS</h4>
+      <h4>
+        {{
+          language === "it"
+            ? "STUDI E CERTIFICAZIONI"
+            : "STUDIES AND CERTIFICATIONS"
+        }}
+      </h4>
       <p>
-        Bachelor's degree in computer science with a grade of 110 / 110 & laude
-        |
+        @if(language == 'it') {Laurea triennale in Informatica con votazione 110
+        / 110 e lode}@else { Bachelor's degree in computer science with a grade
+        of 110 / 110 & laude} |
         <a
           class="source-link"
           href="https://www.unict.it/"
@@ -240,8 +459,14 @@
     </section>
 
     <section id="projects" class="section" data-section="projects">
-      <h4>PROJECTS</h4>
-      <h5>Company Projects: where I learned to be a team player</h5>
+      <h4>{{ language === "it" ? "PROGETTI" : "PROJECTS" }}</h4>
+      <h5>
+        {{
+          language === "it"
+            ? "Progetti Aziendali: dove ho imparato ad essere un team player"
+            : "Company Projects: where I learned to be a team player"
+        }}
+      </h5>
       <a
         class="project-entry"
         href="https://www.iss.it/antea-il-progetto"
@@ -253,10 +478,14 @@
         <div class="project-content">
           <div class="project-name">Progetto AnTeA - ISS</div>
           <div class="project-details">
-            Service for the National Institute of Health that is responsible for
-            collecting and cataloging water quality data. I actively contributed
-            to the design and development of an event-driven back-end
-            architecture using RabbitMq.
+            @if(language == 'it') {Servizio per l'Istituto Superiore di Sanità
+            responsabile della raccolta e catalogazione dei dati sulla qualità
+            dell'acqua. Ho contribuito attivamente alla progettazione e allo
+            sviluppo di un'architettura back-end basata su eventi utilizzando
+            RabbitMQ.} @else {Service for the National Institute of Health that
+            is responsible for collecting and cataloging water quality data. I
+            actively contributed to the design and development of an
+            event-driven back-end architecture using RabbitMq.}
           </div>
           <div class="project-technologies">
             <div class="tech">Java</div>
@@ -287,10 +516,15 @@
         <div class="project-content">
           <div class="project-name">Cartella Sanitaria Elettronica - MDD</div>
           <div class="project-details">
-            Service for the Ministry of Defense that processes genomic data of
-            patients. I played a pivotal role by developing a security feature
-            using Keycloak and a rest api from scratch for back-end use via
-            military equipment.
+            @if(language == 'it') {Servizio per il Ministero della Difesa
+            dedicato all'elaborazione di dati genomici dei pazienti. Ho svolto
+            un ruolo fondamentale sviluppando una funzionalità di sicurezza
+            utilizzando Keycloak e un'API REST creata da zero per l’utilizzo
+            backend tramite apparecchiature militari.} @else { Service for the
+            Ministry of Defense that processes genomic data of patients. I
+            played a pivotal role by developing a security feature using
+            Keycloak and a rest api from scratch for back-end use via military
+            equipment.}
           </div>
           <div class="project-technologies">
             <div class="tech">Java</div>
@@ -319,14 +553,23 @@
         <div class="project-content">
           <div class="project-name">NSMA & PRMP - MIT</div>
           <div class="project-details">
-            Services for the Ministry of Infrastructure and Transport for
-            consultation and filing of files regarding agricultural machinery
-            and for managing heavy vehicle audits. The two services are used as
-            sections of the motorist portal, a web service open to the public,
-            and have technologies in common. I worked with a multinational team
-            using mixed technologies with Agile methodology developing new
-            features and maintaining code in collaboration with a cross-company
-            front-end team.
+            @if(language == 'it') {Servizi per il Ministero delle Infrastrutture
+            e dei Trasporti dedicati alla consultazione e all’archiviazione di
+            pratiche relative a macchine agricole e alla gestione delle
+            revisioni di veicoli pesanti. I due servizi sono sezioni del portale
+            dell’automobilista, un servizio web aperto al pubblico, e
+            condividono tecnologie comuni. Ho lavorato con un team
+            multinazionale utilizzando tecnologie miste e metodologia Agile,
+            sviluppando nuove funzionalità e mantenendo il codice in
+            collaborazione con un team front-end trasversale tra diverse
+            aziende.} @else { Services for the Ministry of Infrastructure and
+            Transport for consultation and filing of files regarding
+            agricultural machinery and for managing heavy vehicle audits. The
+            two services are used as sections of the motorist portal, a web
+            service open to the public, and have technologies in common. I
+            worked with a multinational team using mixed technologies with Agile
+            methodology developing new features and maintaining code in
+            collaboration with a cross-company front-end team.}
           </div>
           <div class="project-technologies">
             <div class="tech">Java</div>
@@ -356,11 +599,17 @@
         <div class="project-content">
           <div class="project-name">Campaign Data Warehouse - TIM</div>
           <div class="project-details">
-            TIM is an Italian telecommunications company, offering fixed-line,
-            public, mobile, VoIP and Internet services. I was responsible for
-            developing and maintaining services related to marketing campaigns
-            on enterprise applications on WebLogic servers interconnected with
-            Oracle Golden Gate.
+            @if(language == 'it') {TIM è un’azienda italiana di
+            telecomunicazioni che offre servizi di linea fissa, pubblica,
+            mobile, VoIP e Internet. Sono stato responsabile dello sviluppo e
+            della manutenzione di servizi legati alle campagne di marketing su
+            applicazioni enterprise ospitate su server WebLogic, interconnesse
+            tramite Oracle GoldenGate.} @else { TIM is an Italian
+            telecommunications company, offering fixed-line, public, mobile,
+            VoIP and Internet services. I was responsible for developing and
+            maintaining services related to marketing campaigns on enterprise
+            applications on WebLogic servers interconnected with Oracle Golden
+            Gate.}
           </div>
           <div class="project-technologies">
             <div class="tech">Java</div>
@@ -382,9 +631,13 @@
         <div class="project-content">
           <div class="project-name">EDVR / GFIP - Poste Italiane</div>
           <div class="project-details">
-            I analyzed and performed security fixes on Java Enterprise
-            applications hosted on JBoss web server. I performed the fixes using
-            both dynamics analysis and static analysis.
+            @if(language == 'it') {Ho analizzato e applicato correzioni di
+            sicurezza su applicazioni Java Enterprise ospitate su server web
+            JBoss. Le correzioni sono state effettuate utilizzando sia l’analisi
+            dinamica che l’analisi statica.} @else { I analyzed and performed
+            security fixes on Java Enterprise applications hosted on JBoss web
+            server. I performed the fixes using both dynamics analysis and
+            static analysis.}
           </div>
           <div class="project-technologies">
             <div class="tech">Java</div>
@@ -406,9 +659,13 @@
         <div class="project-content">
           <div class="project-name">Monitoraggio Progetti - Sport e Salute</div>
           <div class="project-details">
-            The application is open to the public and is responsible for
-            registering participation in sporting events. I have performed
-            evolutions on front-end code in collaboration with my team.
+            @if(language == 'it') {L'applicazione è aperta al pubblico e si
+            occupa della registrazione delle partecipazioni a eventi sportivi.
+            Ho realizzato evoluzioni sul codice front-end in collaborazione con
+            il mio team.} @else { The application is open to the public and is
+            responsible for registering participation in sporting events. I have
+            performed evolutions on front-end code in collaboration with my
+            team.}
           </div>
           <div class="project-technologies">
             <div class="tech">React</div>
@@ -429,10 +686,14 @@
         <div class="project-content">
           <div class="project-name">App monitoring - Unipol</div>
           <div class="project-details">
-            Insurance practice tracking web application. I was in charge of a
-            delicate porting from Spring Boot to Spring Batch for timely
-            execution of back-end queries that went to modify live parameters of
-            a front-end in Power Bi.
+            @if(language == 'it') {Applicazione web per il monitoraggio delle
+            pratiche assicurative. Sono stato responsabile di un delicato
+            porting da Spring Boot a Spring Batch per l’esecuzione tempestiva di
+            query back-end che modificavano parametri live di un front-end in
+            Power BI.} @else { Insurance practice tracking web application. I
+            was in charge of a delicate porting from Spring Boot to Spring Batch
+            for timely execution of back-end queries that went to modify live
+            parameters of a front-end in Power Bi.}
           </div>
           <div class="project-technologies">
             <div class="tech">Java</div>
@@ -454,10 +715,15 @@
         <div class="project-content">
           <div class="project-name">Egames</div>
           <div class="project-details">
-            Project for the course of study Database: consists of a full stack
-            application (React front-end, Spring Boot back-end) where the main
-            focus is the database design starting from a careful analysis by
-            dissecting and analyzing each requirement.
+            @if(language == 'it') {Progetto per il corso di studi in Database:
+            consiste in un'applicazione full stack (front-end React, back-end
+            Spring Boot) in cui l'attenzione principale è rivolta alla
+            progettazione del database, a partire da un'analisi accurata,
+            scomponendo e analizzando ogni requisito.} @else { Project for the
+            course of study Database: consists of a full stack application
+            (React front-end, Spring Boot back-end) where the main focus is the
+            database design starting from a careful analysis by dissecting and
+            analyzing each requirement.}
           </div>
           <div class="project-technologies">
             <div class="tech">Java</div>
@@ -480,12 +746,18 @@
         <div class="project-content">
           <div class="project-name">Astro Jelly Attack</div>
           <div class="project-details">
-            Project for the course of study Digital Game Development: Astro
+            @if(language == 'it') {Progetto per il corso di studi in Digital
+            Game Development: Astro Jelly Attack è un gioco action-adventure in
+            cui il protagonista (Astro) è in missione per salvare esseri
+            gelatinosi (Jelly) persi su pianeti abitati da mostri. Il gioco è
+            interamente sviluppato in Unity e ho seguito tutto lo sviluppo
+            personalmente, dalla progettazione alla risoluzione dei bug.} @else
+            { Project for the course of study Digital Game Development: Astro
             Jelly Attack is proposed as an action-adventure game in which the
             protagonist (Astro) is on a mission to rescue gelatinous beings
             (Jelly) lost on planets inhabited by monsters. The game is entirely
             developed in Unity and I followed the entire development myself from
-            design to bug fixing.
+            design to bug fixing.}
           </div>
           <div class="project-technologies">
             <div class="tech">C#</div>
@@ -507,10 +779,14 @@
         <div class="project-content">
           <div class="project-name">Stroop Color Game</div>
           <div class="project-details">
+            @if(language == 'it') {Progetto per il corso di studi in Web
+            Programming: applicazione composta da un back-end Node.js con
+            Express, che tramite l'uso dell'API di Telegram consente la
+            fruizione di un gioco HTML5 tramite il framework PixiJS.} @else {
             Project for the course of study Web Programming: Application that is
             composed in a Node.js back-end with Express, which through the use
             of Telegram api allows the fruition of an HTML5 game via PixiJS
-            framework.
+            framework.}
           </div>
           <div class="project-technologies">
             <div class="tech">JavaScript</div>
@@ -534,9 +810,13 @@
         <div class="project-content">
           <div class="project-name">Visual Booth</div>
           <div class="project-details">
-            Project for the course of study Computer Architecture: Standalone
-            application written in Processing, a Java-derived language for the
-            creation of visual arts.
+            @if(language == 'it') {Progetto per il corso di studi in Computer
+            Architecture: software interattivo per studiare e imparare
+            l'algoritmo di Booth scritto in Processing, un linguaggio derivato
+            da Java per la creazione di arti visive.} @else { Project for the
+            course of study Computer Architecture: interactive software to study
+            and learn the Booth algorithm, written in Processing, a Java-derived
+            language for creating visual arts.}
           </div>
           <div class="project-technologies">
             <div class="tech">Java</div>
@@ -547,8 +827,12 @@
       </a>
     </section>
     <div class="page-end">
-      Coded in Visual Studio Code by yours truly. Built with Angular and
-      deployed with Vercel. The Font used is Inter by Google Fonts. Inspired by
+      @if(language == 'it') {Scritto su Visual Studio Code da me. Creato con
+      Angular e distribuito con Vercel. Il font utilizzato è Inter di Google
+      Fonts. Inspirato a } @else { Coded on Visual Studio Code by yours truly.
+      Built with Angular and deployed with Vercel. The Font used is Inter by
+      Google Fonts. Inspired by }
+
       <a
         href="https://brittanychiang.com"
         target="_blank"

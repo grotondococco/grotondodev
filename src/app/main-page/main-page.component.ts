@@ -1,4 +1,11 @@
-import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -6,11 +13,34 @@ import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css',
 })
-export class MainPageComponent implements AfterViewInit {
+export class MainPageComponent implements AfterViewInit, OnInit {
+  languages = ['it', 'en'];
+  language: string = 'en'; // default
+  changeLanguage(language: string): void {
+    if (this.languages.includes(language)) {
+      this.language = language;
+      this.router.navigate([language]);
+    } else {
+      this.language = 'en';
+      this.router.navigate(['en']);
+    }
+  }
+
   activeSection: string = 'about';
   currentYear: number = new Date().getFullYear();
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
-
+  constructor(
+    private router: Router,
+    public activatedRoute: ActivatedRoute,
+    private el: ElementRef,
+    private renderer: Renderer2
+  ) {}
+  ngOnInit() {
+    this.activatedRoute.data.subscribe((data) => {
+      if (data['language']) {
+        this.language = data['language'];
+      }
+    });
+  }
   scrollTo(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -23,7 +53,7 @@ export class MainPageComponent implements AfterViewInit {
     const options = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.4, // almeno il 50% visibile
+      threshold: 0.4, // almeno il 40% visibile
     };
 
     const observer = new IntersectionObserver((entries) => {
